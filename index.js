@@ -12,11 +12,11 @@ app.use(function (req, res, next) {
   next();
 }); 
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use('/api/music-player/*', proxy({ target: 'http://localhost:3000', changeOrigin: true }))
-// app.use('/api/about/*', proxy({ target: 'http://localhost:3000', changeOrigin: true }))
-app.use('/api/comments/*', proxy({ target: 'http://localhost:3000', changeOrigin: true }))
-// app.use('/api/graphql', proxy({ target: 'http://localhost:3000', changeOrigin: true }))
-// app.use('/api/sidebar/*', proxy({ target: 'http://localhost:3000', changeOrigin: true }))
+app.use('/api/musicplayer/*', proxy({ target: 'http://54.242.57.180', changeOrigin: true }))
+app.use('/api/description/*', proxy({ target: 'http://ec2-54-175-49-234.compute-1.amazonaws.com', changeOrigin: true }))
+app.use('/api/comments/*', proxy({ target: 'http://ec2-54-80-244-244.compute-1.amazonaws.com', changeOrigin: true }))
+app.use('/graphql', proxy({ target: 'http://ec2-3-91-101-162.compute-1.amazonaws.com', changeOrigin: true }))
+app.use('/api/sidebar/*', proxy({ target: 'http://ec2-3-91-101-162.compute-1.amazonaws.com', changeOrigin: true }))
 app.get('/*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public/index.html'));
 })
