@@ -6,9 +6,7 @@ const app = express();
 const port = 3000;
 
 
-app.get('/loaderio-f018b5f4ae7a56449b7525363f7b6f67/', (req, res) => { 
-	res.sendFile(path.resolve(__dirname, './loaderio-f018b5f4ae7a56449b7525363f7b6f67.txt'));
-});
+
 
 app.use('/scripts', express.static(path.resolve(__dirname, './node_modules')));
 app.use(function (req, res, next) {
@@ -17,6 +15,10 @@ app.use(function (req, res, next) {
   next();
 }); 
 
+
+app.get('/loaderio-9d2e12fdf7d46c5f74dd94d38fca3937/', (req, res) => { 
+	res.sendFile(path.resolve(__dirname, './loaderio-9d2e12fdf7d46c5f74dd94d38fca3937.txt'));
+});
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/api/musicplayer/*', proxy({ target: 'http://54.242.57.180', changeOrigin: true }))
 // app.use('/api/description/*', proxy({ target: 'http://ec2-54-175-49-234.compute-1.amazonaws.com', changeOrigin: true }))
